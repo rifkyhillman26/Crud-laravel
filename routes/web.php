@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/datasiswa', 'SiswaController@index');
+Route::get('/siswa/tambahdata', 'SiswaController@tambah');
+Route::post('/prosesdata', 'SiswaController@proses');
+Route::put('/siswa/{id}', 'SiswaController@ubah');
+Route::delete('/siswa/{id}', 'SiswaController@hapus');

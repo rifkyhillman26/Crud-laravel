@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
+    // menambahkan data
+    protected $fillable = ['nama','alamat'];
+  
     // menyembunyikan 
     protected $hidden = ['created_at', 'updated_at'];
 

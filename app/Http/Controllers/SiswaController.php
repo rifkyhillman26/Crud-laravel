@@ -9,17 +9,34 @@ class SiswaController extends Controller
 {
     // menampilkan semua data siswa
     public function index (){
-        return Siswa::all();
+        // return Siswa::all();
+        
+        // mengambil data dari table pegawai
+         $data = Siswa::all();
+
+    	// mengirim data siswa ke view welcome
+    	return view('datasiswa', ['siswa'=>$data]);
     }
 
     // Menambahkan data siswa
-    public function tambah(Request $request) {
-        $siswa = new Siswa;
-        $siswa->nama = $request->nama;
-        $siswa->alamat = $request->alamat;
-        $siswa->save();
+    public function proses(Request $request) {
+    
+    	$this->validate($request,[
+    		'nama' => 'required',
+    		'alamat' => 'required'
+    	]);
+ 
+        Siswa::create([
+    		'nama' => $request->nama,
+    		'alamat' => $request->alamat
+    	]);
+ 
+    	return redirect('/datasiswa');
+    }
 
-        return "Data berhasil Di Tambahkan !!!";
+    //web Menambahkan data siswa
+    public function tambah() {
+        return view('tambah_data');
     }
 
     // mengubah data siswa
@@ -31,8 +48,6 @@ class SiswaController extends Controller
         $siswa->nama = $nama;
         $siswa->alamat = $alamat;
         $siswa->save();
-
-        return "Data berhasil di ubah !!";
     }
 
     // Menghapus data 
