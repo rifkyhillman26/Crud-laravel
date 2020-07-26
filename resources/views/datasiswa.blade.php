@@ -12,9 +12,6 @@
                 CRUD Data Pegawai
             </div>
             <div class="card-body">
-                <a href="/siswa/tambahdata" class="btn btn-primary">Input siswa Baru</a>
-                <br />
-                <br />
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                         <tr>
@@ -35,6 +32,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <a href="/siswa/tambahdata" class="btn btn-primary">Input siswa Baru</a>
             </div>
         </div>
     </div>
