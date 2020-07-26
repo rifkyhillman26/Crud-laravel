@@ -3,6 +3,8 @@
 
 <head>
     <title>Document</title>
+    <link href="/public/css/datasiswa.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php echo asset('css/datasiswa.css')?>" type="text/css">
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                             <td>{{ $sw->alamat }}</td>
                             <td>
                                 <a href="/pegawai/edit/{{ $sw->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/pegawai/hapus/{{ $sw->id }}" class="btn btn-danger">Hapus</a>
+                                <a href="/siswa/hapus/{{ $sw->id }}" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
                         @endforeach

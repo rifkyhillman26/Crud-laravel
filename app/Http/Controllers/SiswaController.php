@@ -18,6 +18,11 @@ class SiswaController extends Controller
     	return view('datasiswa', ['siswa'=>$data]);
     }
 
+    //web Menambahkan data siswa
+        public function tambah() {
+            return view('tambah_data');
+    }
+
     // Menambahkan data siswa
     public function proses(Request $request) {
     
@@ -32,11 +37,6 @@ class SiswaController extends Controller
     	]);
  
     	return redirect('/datasiswa');
-    }
-
-    //web Menambahkan data siswa
-    public function tambah() {
-        return view('tambah_data');
     }
 
     // mengubah data siswa
@@ -55,6 +55,6 @@ class SiswaController extends Controller
         $siswa = Siswa::find($id);
         $siswa->delete();
 
-        return "Data berhasil di hapus !!!";
+        return redirect('/datasiswa');
     }
 }

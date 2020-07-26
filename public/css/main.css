@@ -1,5 +1,8 @@
-.container {
+* {
   background-color: black;
+}
+
+.container {
   color: #fff;
 }
 
