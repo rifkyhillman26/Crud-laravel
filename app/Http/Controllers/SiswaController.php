@@ -39,15 +39,26 @@ class SiswaController extends Controller
     	return redirect('/datasiswa');
     }
 
-    // mengubah data siswa
-    public function Ubah(Request $request, $id) {
-        $nama = $request->nama;
-        $alamat = $request->alamat;
-
+    // mengambil Id data siswa
+    public function edit($id) {
         $siswa = Siswa::find($id);
-        $siswa->nama = $nama;
-        $siswa->alamat = $alamat;
+        return view('edit_data', ['siswa' => $siswa]);
+    }
+
+    // mengubah data siswa
+    public function update($id, Request $request) {
+
+        $this->validate($request,[
+        'nama' => 'required',
+        'alamat' => 'required'
+        ]);
+    
+        $siswa = Siswa::find($id);
+        $siswa->nama = $request->nama;
+        $siswa->alamat = $request->alamat;
         $siswa->save();
+
+        return redirect('/datasiswa');
     }
 
     // Menghapus data 

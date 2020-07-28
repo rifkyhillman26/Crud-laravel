@@ -27,7 +27,7 @@
                             <td>{{ $sw->nama }}</td>
                             <td>{{ $sw->alamat }}</td>
                             <td>
-                                <a href="/pegawai/edit/{{ $sw->id }}" class="btn btn-warning">Edit</a>
+                                <a href="/siswa/edit/{{ $sw->id }}" class="btn btn-warning">Edit</a>
                                 <a href="/siswa/hapus/{{ $sw->id }}" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>

@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Route::get('/datasiswa', 'SiswaController@index');
 Route::get('/siswa/tambahdata', 'SiswaController@tambah');
-Route::get('/siswa/hapus/{id}', 'SiswaController@hapus');
 Route::post('/prosesdata', 'SiswaController@proses');
-Route::put('/siswa/{id}', 'SiswaController@ubah');
-// Route::delete('/siswa/{id}', 'SiswaController@hapus');
+Route::get('/siswa/edit/{id}', 'SiswaController@edit');
+Route::put('/siswa/update/{id}', 'SiswaController@update');
+Route::get('/siswa/hapus/{id}', 'SiswaController@hapus');
+
